@@ -16,9 +16,11 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('admin.categories.index') }}" class="nav-link">
+                    <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Категории</p>
+                        <p>Категории
+{{--                            <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
+                        </p>
                     </a>
                 </li>
             </ul>

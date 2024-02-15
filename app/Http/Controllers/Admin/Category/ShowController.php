@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ShowController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Category $category)
     {
         // TODO: Implement __invoke() method.
 
-        return view('admin.categories.index');
+
+
+        return view('admin.categories.show', compact('category'));
     }
 }

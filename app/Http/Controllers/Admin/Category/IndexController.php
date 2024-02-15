@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Main;
+namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
@@ -14,11 +14,6 @@ class IndexController extends Controller
 
         $categories = Category::all();
 
-        $categories_count = $categories->count();
-
-
-
-      //  return view('admin.main.index', compact('categories_count'));
-        return view('admin.main.index');
+        return view('admin.categories.index', compact('categories'));
     }
 }
