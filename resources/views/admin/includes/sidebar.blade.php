@@ -13,17 +13,25 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-
                 <li class="nav-item">
                     <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
                         <p>Категории
-{{--                            <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
+                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.tags.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-circle text-info"></i>
+                        <p>Теги
+                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
                         </p>
                     </a>
                 </li>
             </ul>
+
         </nav>
         <!-- /.sidebar-menu -->
     </div>
