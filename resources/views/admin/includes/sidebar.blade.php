@@ -14,6 +14,15 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
+                    <a href="{{ route('admin.posts.index') }}" class="nav-link">
+                        <i class="nav-icon far fa-circle text-info"></i>
+                        <p>Посты
+                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
                         <p>Категории
@@ -25,7 +34,7 @@
                 <li class="nav-item">
                     <a href="{{ route('admin.tags.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Теги
+                        <p>Тэги
                             {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
                         </p>
                     </a>

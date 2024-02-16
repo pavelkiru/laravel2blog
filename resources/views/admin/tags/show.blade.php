@@ -10,7 +10,7 @@
         </div>
 
         <div class="d-flex">
-            <a href="{{ route('admin.tags.index') }}" class="btn btn-primary mr-1">Все категории</a>
+            <a href="{{ route('admin.tags.index') }}" class="btn btn-primary mr-1">Все тэги</a>
 
             <a href="{{ route('admin.tags.edit', $tag->id) }}" class="btn btn-primary mr-1">Edit</a>
 

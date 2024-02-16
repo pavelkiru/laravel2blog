@@ -22,7 +22,7 @@
         </form>
 
         <div class="mt-2">
-            <a href="{{ route('admin.tags.index') }}" class="btn btn-primary">Все теги</a>
+            <a href="{{ route('admin.tags.index') }}" class="btn btn-primary">Все тэги</a>
         </div>
 
     </section>

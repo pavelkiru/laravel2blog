@@ -20,7 +20,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <div class="pt-4">
-            <a href="{{ route('admin.tags.index') }}" class="btn btn-primary">Все теги</a>
+            <a href="{{ route('admin.tags.index') }}" class="btn btn-primary">Все тэги</a>
         </div>
     </section>
 
