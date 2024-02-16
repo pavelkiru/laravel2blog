@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Post;
 
 class ShowController extends Controller
@@ -11,8 +12,8 @@ class ShowController extends Controller
     {
         // TODO: Implement __invoke() method.
 
+        $category = Category::find($post->category_id);
 
-
-        return view('admin.posts.show', compact('post'));
+        return view('admin.posts.show', compact('post', 'category'));
     }
 }

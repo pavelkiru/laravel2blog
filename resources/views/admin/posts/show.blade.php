@@ -7,6 +7,13 @@
         <div>
             <p>ID: {{ $post->id }}</p>
             <p>Title: {{ $post->title }}</p>
+            <p>
+{{--                <img src="{{ asset('storage/') . $post->main_image }}" alt="">--}}
+
+                <img src="{{ asset('storage/app/'.$post->main_image) }}" alt="" title="" />
+            </p>
+            <p>Content: {!! $post->content !!}  </p>
+            <p>Category: {{ $category->title }}</p>
         </div>
 
         <div class="d-flex">

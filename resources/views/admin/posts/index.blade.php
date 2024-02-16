@@ -15,6 +15,7 @@
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Content</th>
                     <th scope="col">Category</th>
                     <th scope="col" class="d-flex justify-content-end mr-1">Action</th>
                 </tr>
@@ -24,7 +25,15 @@
                         <tr>
                             <th scope="row">{{ $post->id }}</th>
                             <td>{{ $post->title }}</td>
-                            <td>{{ $post->category_id }}</td>
+                            <td>{!! $post->content !!}</td>
+                            <td>
+                                @foreach($categories as $category)
+                                    @if( $category->id == $post->category_id )
+                                        {{ $category->title }}
+                                    @endif
+
+                                @endforeach
+                            </td>
                             <td>
                                 <div class="d-flex justify-content-end">
                                     <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary mr-1">Show</a>

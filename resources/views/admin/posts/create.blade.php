@@ -4,7 +4,7 @@
     <section class="content">
         <h1>Добавление поста</h1>
 
-        <form action="{{ route('admin.posts.store') }}" method="post" >
+        <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
 
             @csrf
 
@@ -27,13 +27,47 @@
             @enderror
 
             <div class="mb-3">
-                <label for="category_id" class="form-label">Category</label>
-                <input type="text" class="form-control" id="category_id" name="category_id" value="{{ old('category') }}">
+                <label for="category" class="form-label">Category</label>
+                <select name="category_id" id="category">
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                    @endforeach
+                </select>
             </div>
 
             @error('category')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+
+
+            <div class="mb-3">
+                <label for="exampleInputFile">Добавить превью</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="preview_image" name="preview_image">
+                        <label class="custom-file-label" for="preview_image">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputFile">Добавить изображение</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="main_image" name="main_image">
+                        <label class="custom-file-label" for="main_image">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="">Upload</span>
+                    </div>
+                </div>
+            </div>
+
+
+
 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

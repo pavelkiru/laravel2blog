@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('admin_style_js/styles/adminlte.css') }}">
     <script src="{{ asset('admin_style_js/js/adminlte.js') }}"></script>
     <script src="{{ asset('admin_style_js/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin_style_js/js/bs-custom-file-input.min.js') }}"></script>
 
 
 {{--    summernote--}}
@@ -254,6 +255,9 @@
                 ['view', ['fullscreen', 'codeview', 'help']],
             ],
         });
+
+
+        bsCustomFileInput.init();
     });
 
 </script>
