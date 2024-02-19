@@ -1,13 +1,13 @@
 @extends('admin.layouts.main')
 @section('content')
 
-    <section class="content">
+    <section class="content post_update">
         <h1>Обновление поста</h1>
 
-        <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.posts.update', $post->id ) }}" method="post" enctype="multipart/form-data">
 
             @csrf
-
+            @method('PATCH')
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
@@ -66,7 +66,8 @@
 
 
             <div class="mb-3">
-                <label for="exampleInputFile">Добавить превью</label>
+
+                <label for="exampleInputFile">Изменить превью</label>
                 <div class="input-group">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="preview_image" name="preview_image">
@@ -84,7 +85,8 @@
 
 
             <div class="mb-3">
-                <label for="exampleInputFile">Добавить изображение</label>
+
+                <label for="exampleInputFile">Изменить изображение</label>
                 <div class="input-group">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="main_image" name="main_image">

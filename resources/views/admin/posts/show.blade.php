@@ -8,7 +8,7 @@
             <p>ID: {{ $post->id }}</p>
             <p>Title: {{ $post->title }}</p>
             <p>
-                <img class="" src="{{ url('storage/' . $post->main_image) }}" alt="">
+                <img class="" src="{{ asset('storage/' . $post->main_image) }}" alt="">
             </p>
             <p>Content: {!! $post->content !!}  </p>
             <p>Category: {{ $category->title }}</p>
