@@ -27,9 +27,26 @@
                 @enderror
             </div>
 
+            <div class="mb-3">
+                <label for="role" class="form-label">Пользователь</label>
+                <select name="role" id="role">
+                    @foreach($roles as $id => $role)
+                        <option value="{{ $id }}">{{ $role }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            @error('role')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="mb-3">
+                <input type="hidden" name="user_id" value="{{ $user->id }}">
+            </div>
 
 
             <button type="submit" class="btn btn-primary">Обновить</button>
+
         </form>
 
         <div class="mt-2">

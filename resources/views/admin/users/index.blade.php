@@ -4,7 +4,7 @@
     <section class="content pt-4">
 
         <div class="d-flex justify-content-between align-content-center align-items-center">
-            <h1>Tags <span class="rounded p-1 bg-blue br">{{ $users->count() }}</span></h1>
+            <h1>Пользователи <span class="rounded p-1 bg-blue br">{{ $users->count() }}</span></h1>
 
             <a href="{{ route('admin.users.create') }}" class="btn btn-primary">Создать</a>
         </div>
@@ -16,6 +16,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Role</th>
                     <th scope="col" class="d-flex justify-content-end mr-1">Action</th>
                 </tr>
                 </thead>
@@ -25,6 +26,7 @@
                             <th scope="row">{{ $user->id }}</th>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
+                            <td>{{ $roles[$user->role] }}</td>
                             <td>
                                 <div class="d-flex justify-content-end">
                                     <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-primary mr-1">Show</a>

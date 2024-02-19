@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class CreateController extends Controller
 {
@@ -10,6 +11,8 @@ class CreateController extends Controller
     {
         // TODO: Implement __invoke() method.
 
-        return view('admin.users.create');
+        $roles = User::getRoles();
+
+        return view('admin.users.create', compact('roles'));
     }
 }

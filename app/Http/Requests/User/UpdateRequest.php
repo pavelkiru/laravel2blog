@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateRequest extends FormRequest
 {
@@ -25,7 +26,17 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|email|string|unique:users',
+            'email' => 'required|email|string|unique:users,email,'.$this->user_id,
+            'user_id' => 'required|integer|exists:users,id',
+            'role' => 'required|integer'
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'email.unique' => 'Мыло занято (update)'
         ];
     }
 }

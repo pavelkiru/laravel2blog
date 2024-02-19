@@ -11,6 +11,7 @@ class EditController extends Controller
     public function __invoke( Tag $tag)
     {
 
+
         return view('admin.tags.edit', compact('tag'));
 
     }
