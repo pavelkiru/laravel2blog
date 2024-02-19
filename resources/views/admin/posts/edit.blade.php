@@ -2,7 +2,7 @@
 @section('content')
 
     <section class="content">
-        <h1>Добавление поста</h1>
+        <h1>Обновление поста</h1>
 
         <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
 
@@ -10,7 +10,7 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
             </div>
 
             @error('title')
@@ -19,7 +19,7 @@
 
             <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <textarea name="content" id="summernote" cols="30" rows="10">{{old('content')}}</textarea>
+                <textarea name="content" id="summernote" cols="30" rows="10">{{ $post->content }}</textarea>
             </div>
 
             @error('content')
@@ -30,7 +30,11 @@
                 <label for="category_id" class="form-label">Category</label>
                 <select name="category_id" id="category_id">
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                        @if( $category->id == $post->category_id )
+                            <option value="{{ $category->id }}" selected>{{ $category->title }}</option>
+                        @else
+                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                        @endif
                     @endforeach
                 </select>
             </div>
@@ -39,13 +43,18 @@
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-
             <div class="col-md-6" data-select2-id="30">
                 <div class="form-group d-flex flex-column">
                     <label>Multiple</label>
                     <select class="select2 select2-hidden-accessible w-50" multiple="multiple" name="tag_ids[]" data-placeholder="Select a Tag">
                         @foreach($tags as $tag)
-                            <option value="{{$tag->id}}">{{ $tag->title }}</option>
+                            <option value="{{$tag->id}}"
+                                @foreach($post_tags as $post_tag)
+                                    @if($tag->id == $post_tag)
+                                        selected
+                                    @endif
+                                @endforeach
+                            >{{ $tag->title }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -91,15 +100,12 @@
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
-
-
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Обновить</button>
         </form>
 
         <div class="pt-4">
             <a href="{{ route('admin.posts.index') }}" class="btn btn-primary">Все посты</a>
         </div>
     </section>
-
 
 @endsection

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Post;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Models\Tag;
 
 class CreateController extends Controller
 {
@@ -13,7 +13,8 @@ class CreateController extends Controller
         // TODO: Implement __invoke() method.
 
         $categories = Category::all();
+        $tags = Tag::all();
 
-        return view('admin.posts.create', compact('categories'));
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 }

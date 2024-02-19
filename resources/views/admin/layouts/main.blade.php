@@ -7,7 +7,10 @@
 
 
     <script src="{{ asset('assets/vendors/jquery/jquery.min.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('admin_style_js/styles/adminlte.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('admin_style_js/styles/admin_styles.css') }}">
+
+
     <script src="{{ asset('admin_style_js/js/adminlte.js') }}"></script>
     <script src="{{ asset('admin_style_js/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('admin_style_js/js/bs-custom-file-input.min.js') }}"></script>
