@@ -58,7 +58,6 @@ Route::group(['namespace' => "Admin", 'prefix' => 'admin'], function () {
 
     Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
 
-
         Route::get('/', 'IndexController')->name('admin.posts.index');
         Route::get('/create', 'CreateController')->name('admin.posts.create');
         Route::post('/', 'StoreController')->name('admin.posts.store');
@@ -66,6 +65,18 @@ Route::group(['namespace' => "Admin", 'prefix' => 'admin'], function () {
         Route::get('/{post}/edit', 'EditController')->name('admin.posts.edit');
         Route::patch('/{post}', 'UpdateController')->name('admin.posts.update');
         Route::delete('/{post}', 'DestroyController')->name('admin.posts.delete');
+
+    });
+
+    Route::group(['namespace' => 'User', 'prefix' => 'users'], function () {
+
+        Route::get('/', 'IndexController')->name('admin.users.index');
+        Route::get('/create', 'CreateController')->name('admin.users.create');
+        Route::post('/', 'StoreController')->name('admin.users.store');
+        Route::get('/{user}', 'ShowController')->name('admin.users.show');
+        Route::get('/{user}/edit', 'EditController')->name('admin.users.edit');
+        Route::patch('/{user}', 'UpdateController')->name('admin.users.update');
+        Route::delete('/{user}', 'DestroyController')->name('admin.users.delete');
 
     });
 });
