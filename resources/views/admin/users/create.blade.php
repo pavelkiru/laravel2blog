@@ -31,7 +31,11 @@
                 <label for="role" class="form-label">Пользователь</label>
                 <select name="role" id="role">
                     @foreach($roles as $id => $role)
-                        <option value="{{ $id }}">{{ $role }}</option>
+                        <option value="{{ $id }}"
+                            @if($id == 1)
+                                selected
+                            @endif
+                        >{{ $role }}</option>
                     @endforeach
                 </select>
             </div>
