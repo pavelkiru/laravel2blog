@@ -14,38 +14,37 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
+                    <a href="{{ route('admin.main') }}" class="nav-link">
+                        <i class="nav-icon far fa-circle text-info"></i>
+                        <p>Главная</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('admin.posts.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Посты
-                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
-                        </p>
+                        <p>Посты</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ route('admin.category.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Категории
-                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
-                        </p>
+                        <p>Категории</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ route('admin.tags.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Тэги
-                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
-                        </p>
+                        <p>Тэги</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ route('admin.users.index') }}" class="nav-link">
                         <i class="nav-icon far fa-circle text-info"></i>
-                        <p>Пользователи
-                            {{-- <span class="rounded-circle pr-1 pl-1 bg-blue br">{{ $categories_count }}</span>--}}
-                        </p>
+                        <p>Пользователи</p>
                     </a>
                 </li>
             </ul>

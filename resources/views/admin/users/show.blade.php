@@ -3,11 +3,17 @@
 
     <section class="content">
         <h1>Пользователь</h1>
-
+        <div class="col-12">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ route('admin.main') }}">Главная</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin.users.index') }}">Пользователи</a></li>
+                <li class="breadcrumb-item active">{{ $user->name }}</li>
+            </ol>
+        </div>
         <div>
             <p>ID: {{ $user->id }}</p>
             <p>Name: {{ $user->name }}</p>
-            <p>Name: {{ $user->email }}</p>
+            <p>Email: {{ $user->email }}</p>
         </div>
 
         <div class="d-flex">

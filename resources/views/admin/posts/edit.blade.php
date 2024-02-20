@@ -3,7 +3,13 @@
 
     <section class="content post_update">
         <h1>Обновление поста</h1>
-
+        <div class="col-12">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ route('admin.main') }}">Главная</a></li>
+                <li class="breadcrumb-item active"><a href="{{ route('admin.posts.index') }}">Посты</a></li>
+                <li class="breadcrumb-item">{{ $post->title }}</li>
+            </ol>
+        </div>
         <form action="{{ route('admin.posts.update', $post->id ) }}" method="post" enctype="multipart/form-data">
 
             @csrf

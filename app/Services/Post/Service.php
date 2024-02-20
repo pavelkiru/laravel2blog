@@ -20,8 +20,6 @@ class Service
                 unset($data['tag_ids']);
             }
 
-
-
             $data['preview_image'] = Storage::disk('public')->put('images', $data['preview_image']);
             $data['main_image'] = Storage::disk('public')->put('images', $data['main_image']);
 
@@ -31,15 +29,11 @@ class Service
                 $post->tags()->attach($tagIds);
             }
 
-
-
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
             abort(404);
         }
-
-
     }
 
     public function update($post, $data) {
@@ -57,17 +51,13 @@ class Service
             $post->update($data);
             $post->tags()->sync($tagIds);
 
-            return $post;
             DB::commit();
+
+
         } catch (\Exception $exception) {
             DB::rollBack();
             abort(500);
         }
-
-
-
-
-
-
+        return $post;
     }
 }

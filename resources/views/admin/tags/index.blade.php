@@ -8,7 +8,12 @@
 
             <a href="{{ route('admin.tags.create') }}" class="btn btn-primary">Создать</a>
         </div>
-
+        <div class="col-12">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ route('admin.main') }}">Главная</a></li>
+                <li class="breadcrumb-item active">Тэги</li>
+            </ol>
+        </div>
         <div>
             <table class="table">
                 <thead>

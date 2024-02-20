@@ -8,7 +8,12 @@
 
             <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Создать</a>
         </div>
-
+        <div class="col-12">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ route('admin.main') }}">Главная</a></li>
+                <li class="breadcrumb-item active">Посты</li>
+            </ol>
+        </div>
         <div>
             <table class="table">
                 <thead>
@@ -16,8 +21,8 @@
                     <th scope="col">id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Content</th>
-                    <th scope="col">Category</th>
                     <th scope="col">Preview</th>
+                    <th scope="col">Category</th>
                     <th scope="col" class="d-flex justify-content-end mr-1">Action</th>
                 </tr>
                 </thead>

@@ -3,7 +3,13 @@
 
     <section class="content">
         <h1>Добавление поста</h1>
-
+        <div class="col-12">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ route('admin.main') }}">Главная</a></li>
+                <li class="breadcrumb-item active"><a href="{{ route('admin.posts.index') }}">Посты</a></li>
+                <li class="breadcrumb-item">Добавить пост</li>
+            </ol>
+        </div>
         <form action="{{ route('admin.posts.store') }}" method="post" enctype="multipart/form-data">
 
             @csrf
