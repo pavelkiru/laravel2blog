@@ -15,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::group(['namespace' => 'Main'], function () {
+Route::group(['namespace' => 'Front'], function () {
 
-    Route::get('/', 'IndexController');
+    Route::get('/', 'IndexController')->name('fronts.index');
 
+
+
+
+    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
+        Route::get('/{post}', 'ShowController')->name('fronts.posts.show');
+    });
 });
 
 Route::group(['namespace' => "Personal", 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
@@ -26,6 +32,7 @@ Route::group(['namespace' => "Personal", 'prefix' => 'personal', 'middleware' =>
 
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('personal.main.index');
+
     });
 
 
