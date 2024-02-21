@@ -25,7 +25,20 @@
                 <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">Blog</a>
+                        <a class="nav-link" href="{{ route('fronts.index') }}">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        @auth()
+                            <a class="nav-link" href="{{ route('personal.main.index') }}">Кабинет</a>
+                        @endauth
+
+                        @guest()
+                                <a class="nav-link" href="{{ route('personal.main.index') }}">Войти</a>
+                        @endguest
+
+
+
                     </li>
 
                 </ul>

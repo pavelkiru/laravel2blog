@@ -24,6 +24,11 @@ Route::group(['namespace' => 'Front'], function () {
 
     Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
         Route::get('/{post}', 'ShowController')->name('fronts.posts.show');
+
+
+        Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
+            Route::post('/', 'StoreController')->name('post.comments.store');
+        });
     });
 });
 

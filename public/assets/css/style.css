@@ -7973,6 +7973,98 @@ label {
 }
 
 
+.post_wr {
+
+}
+
+
+.main_image_wr {
+    display: flex;
+    justify-content: center;
+}
+
+.main_image_wr .main_image {
+    width: 80%;
+    height: auto;
+}
+
+.comments_wr {
+    margin: 100px 0;
+}
+
+.comments_wr .item {
+    margin-bottom: 50px;
+}
+
+.comments_wr .user_data_wr {
+    padding-right: 50px;
+    border-right: 2px solid black;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

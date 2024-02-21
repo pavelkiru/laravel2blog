@@ -73,10 +73,14 @@
         <!-- Right navbar links -->
 
 
-        <div>
+        <div class="d-flex">
+            <div>
+                <a class="nav-link btn btn-primary mr-1"  href="{{ route('fronts.index') }}">Blog</a>
+            </div>
+
             <form action="{{ route('logout') }}" method="post">
                 @csrf
-                <input type="submit" value="Выход">
+                <input class="btn btn-primary h-100" type="submit" value="Выход">
             </form>
         </div>
 
