@@ -7962,6 +7962,15 @@ label {
 
 
 
+.related_posts {
+    margin-bottom: 100px;
+}
+
+
+.related_posts .item img {
+    width: 100px;
+    height: auto;
+}
 
 
 

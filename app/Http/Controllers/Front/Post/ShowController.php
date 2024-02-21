@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front\Post;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use Carbon\Carbon;
 
 class ShowController extends Controller
 {
@@ -12,6 +13,14 @@ class ShowController extends Controller
         // TODO: Implement __invoke() method.
 
 
-        return view('fronts.posts.show', compact('post', 'post'));
+
+        $data = Carbon::parse($post->created_at);
+
+        $relatedPosts = Post::where('category_id', $post->category_id)
+            ->where('id', '!=', $post->id)
+            ->get()
+            ->take(3);
+
+        return view('fronts.posts.show', compact('post', 'data', 'relatedPosts'));
     }
 }

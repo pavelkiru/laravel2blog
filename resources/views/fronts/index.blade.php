@@ -12,12 +12,7 @@
                                 <img src="{{ url('storage/' . $post->preview_image) }}" alt="">
                             </div>
                             <p class="blog-post-category">
-                                @foreach($categories as $category)
-                                    @if( $category->id == $post->category_id )
-                                        {{ $category->title }}
-                                    @endif
-
-                                @endforeach
+                                {{$post->category->title}}
                             </p>
                             <h6 class="blog-post-title">{{ $post->title }}</h6>
                         </a>
