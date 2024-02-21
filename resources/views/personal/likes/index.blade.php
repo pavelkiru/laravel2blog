@@ -38,19 +38,22 @@
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->title }}</td>
                         <td>{!! $post->content !!}</td>
-
                         <td>
-{{--                            <div class="d-flex justify-content-end">--}}
+
+                            <div class="d-flex justify-content-end">
+
 {{--                                <a href="{{ route('admin.posts.show', $post->id) }}" class="btn btn-primary mr-1">Show</a>--}}
 {{--                                <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary mr-1">Edit</a>--}}
 
 
-                                <form action="{{ route('personal.likes.delete', $post->id)}}" method="post">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="btn btn-danger" type="submit">Unlike</button>
-                                </form>
+                            <form action="{{ route('personal.likes.delete', $post->id)}}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-danger" type="submit">Unlike</button>
+                            </form>
+
                             </div>
+
                         </td>
                     </tr>
                 @endforeach

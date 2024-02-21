@@ -21,7 +21,43 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-jhgfjhfj
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+
+                    <th scope="col">Content</th>
+
+                    <th scope="col" class="d-flex justify-content-end mr-1">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($comments as $comment)
+                    <tr>
+                        <th scope="row">{{ $comment->id }}</th>
+
+                        <td>{{ $comment->message }}</td>
+
+                        <td>
+
+                            <div class="d-flex justify-content-end">
+
+                                <a href="{{ route('personal.comments.edit', $comment->id) }}" class="btn btn-primary mr-1">Edit</a>
+
+
+                                <form action="{{ route('personal.comments.delete', $comment->id)}}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+
         </div><!-- /.container-fluid -->
     </section>
 

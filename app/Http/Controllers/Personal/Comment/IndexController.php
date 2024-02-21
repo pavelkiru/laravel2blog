@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Personal\Comment;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Models\Comment;
 
 class IndexController extends Controller
 {
@@ -12,6 +11,8 @@ class IndexController extends Controller
     {
         // TODO: Implement __invoke() method.
 
-        return view('personal.comments.index');
+        $comments = auth()->user()->comments;
+
+        return view('personal.comments.index', compact('comments'));
     }
 }
