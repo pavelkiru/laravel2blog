@@ -3,6 +3,8 @@
 
 <div class="container post_wr">
 
+{{--   @dd($post)--}}
+
     <div class="row">
         <div class="col-6">
             <h1>{{ $post->title }}</h1>
@@ -15,6 +17,25 @@
                 <a href="{{ route('fronts.index') }}" class="btn btn-primary">Все посты</a>
             </div>
         </div>
+    </div>
+
+    <div class="d-flex">
+        <div class="mr-1 d-flex align-items-center">liked: {{$post->liked_users_count}}</div>
+        @auth()
+            <form action="{{route('post.likes.store', $post->id)}}" method="post">
+                @csrf
+
+                <button type="submit">
+
+                    @if(auth()->user()->likedPosts->contains($post->id))
+                        <span>unlike</span>
+                    @else
+                        <span>like</span>
+                    @endif
+
+                </button>
+            </form>
+        @endauth
     </div>
 
     <div class="row">

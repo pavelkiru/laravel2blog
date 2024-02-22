@@ -7,15 +7,39 @@
             <section class="featured-posts-section">
                 <div class="row">
                     @foreach($posts as $post)
-                        <a href="{{route('fronts.posts.show', $post->id) }}" class="col-md-4 fetured-post blog-post" data-aos="fade-up">
+                        <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
                             <div class="blog-post-thumbnail-wrapper">
                                 <img src="{{ url('storage/' . $post->preview_image) }}" alt="">
                             </div>
                             <p class="blog-post-category">
                                 {{$post->category->title}}
                             </p>
-                            <h6 class="blog-post-title">{{ $post->title }}</h6>
-                        </a>
+
+                            <div class="d-flex justify-content-between">
+                                <a href="{{route('fronts.posts.show', $post->id) }}">
+                                    <h6 class="blog-post-title">{{ $post->title }}</h6>
+                                </a>
+
+                                <div class="d-flex">
+                                    <div class="mr-1 d-flex align-items-center">liked: {{$post->liked_users_count}}</div>
+                                    @auth()
+                                        <form action="{{route('post.likes.store', $post->id)}}" method="post">
+                                            @csrf
+
+                                            <button type="submit">
+
+                                                @if(auth()->user()->likedPosts->contains($post->id))
+                                                    <span>unlike</span>
+                                                @else
+                                                    <span>like</span>
+                                                @endif
+
+                                            </button>
+                                        </form>
+                                    @endauth
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
                 <div class="row d-flex justify-content-center">

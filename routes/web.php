@@ -29,8 +29,37 @@ Route::group(['namespace' => 'Front'], function () {
         Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
             Route::post('/', 'StoreController')->name('post.comments.store');
         });
+
+
+        Route::group(['namespace' => 'Like', 'prefix' => '{post}/likes'], function () {
+            Route::post('/', 'StoreController')->name('post.likes.store');
+        });
     });
 });
+
+
+
+
+
+
+
+
+
+Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
+
+    Route::get('/', 'IndexController')->name('categories.index');
+
+
+    Route::group(['namespace' => 'Post', 'prefix' => '{category}/posts'], function () {
+        Route::get('/', 'IndexController')->name('categories.posts.index');
+    });
+});
+
+
+
+
+
+
 
 Route::group(['namespace' => "Personal", 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
 
